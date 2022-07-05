@@ -111,8 +111,23 @@ public class Tabuleiro {
 		
 		StringBuilder sb = new StringBuilder();
 		
+		sb.append("  ");
+		
+		for(int c = 0; c < colunas; c++) {
+			
+			sb.append(" ");
+			sb.append(c);
+			sb.append(" ");
+			
+		}
+		
+		sb.append("\n");
+		
 		int i = 0;
 		for(int l = 0; l < linhas; l++) {
+			
+			sb.append(l);
+			sb.append(" ");
 			
 			for(int c = 0; c < colunas; c++) {
 				
