@@ -61,16 +61,16 @@ public class TabuleiroConsole {
 
 		try {
 			
-			while(tabuleiro.objetivoAlcancado()) {
+			while(!tabuleiro.objetivoAlcancado()) {
 				
 				System.out.println(tabuleiro);
 				
 				String digitado = capturarValorDigitado("Digite (x, y): ");
 				
-				Iterator<Integer> xy = Arrays.stream(digitado.split(",")).map(e ->Integer.parseInt(e.trim()))
-				.iterator();
+				Iterator<Integer> xy = Arrays.stream(digitado.split(","))
+						.map(e ->Integer.parseInt(e.trim())).iterator();
 				
-				capturarValorDigitado("1 - Abrir ou 2 - (Des)Marcar:");
+				digitado = capturarValorDigitado("1 - Abrir ou 2 - (Des)Marcar:");
 				
 				if("1".equals(digitado)) {
 					
@@ -88,6 +88,7 @@ public class TabuleiroConsole {
 			
 		} catch (ExplosaoException e) {
 			
+			System.out.println(tabuleiro);
 			System.out.println("Você perdeu!");
 			
 		}
